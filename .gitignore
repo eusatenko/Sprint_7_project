@@ -24,3 +24,7 @@ hs_err_pid*
 
 .idea
 target
+.allure
+
+#добавил исключение из gitignore
+!target\allure-results\
