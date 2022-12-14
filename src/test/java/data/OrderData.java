@@ -1,5 +1,8 @@
-public class Order {
+package data;
 
+import static io.restassured.RestAssured.given;
+
+public class OrderData {
     private String firstName;
     private String lastName;
     private String address;
@@ -10,9 +13,10 @@ public class Order {
     private String comment;
     private String[] color;
 
-    public Order(String firstName, String lastName, String address,
-                 int metroStation, String phone, int rentTime,
-                 String deliveryDate, String comment, String[] color) {
+    public OrderData(){};
+    public OrderData(String firstName, String lastName, String address,
+                     int metroStation, String phone, int rentTime,
+                     String deliveryDate, String comment, String[] color) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;

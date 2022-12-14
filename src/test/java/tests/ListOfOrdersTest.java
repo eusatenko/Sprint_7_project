@@ -1,26 +1,27 @@
+package tests;
+
+import data.OrderData;
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
-import io.restassured.RestAssured;
-import org.junit.Before;
+
+import metods.Order;
 import org.junit.Test;
 
-import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.apache.http.HttpStatus.*;
+
 
 @DisplayName("Получение списка заказов")
-public class ListOfOrdersTest {
-    @Before
-    public void setUp() {
-        RestAssured.baseURI = "http://qa-scooter.praktikum-services.ru";
-    }
+public class ListOfOrdersTest extends BaseTest {
 
     @Test
     @DisplayName("Тест получения списка заказов")
     @Description("Получаем список заказов")
     public void checkListOfOrderNotNull() {
-        given()
-                .get("/api/v1/orders")
-                .then().statusCode(200)
+        Order order = new Order();
+        OrderData orderData = new OrderData();
+        order.getListOfOrders()
+                .then().statusCode(SC_OK)
                 .and()
                 .assertThat().body("orders", notNullValue());
     }
