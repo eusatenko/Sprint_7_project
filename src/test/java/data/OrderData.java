@@ -1,5 +1,7 @@
 package data;
 
+import java.util.Arrays;
+
 import static io.restassured.RestAssured.given;
 
 public class OrderData {
@@ -98,5 +100,20 @@ public class OrderData {
 
     public void setColor(String[] color) {
         this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "OrderData{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", address='" + address + '\'' +
+                ", metroStation=" + metroStation +
+                ", phone='" + phone + '\'' +
+                ", rentTime=" + rentTime +
+                ", deliveryDate='" + deliveryDate + '\'' +
+                ", comment='" + comment + '\'' +
+                ", color=" + Arrays.toString(color) +
+                '}';
     }
 }
