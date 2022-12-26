@@ -2,7 +2,7 @@ package data;
 
 public class CourierData {
     private String login = "Usatenko" + (10000 + (int)(Math.random() *99999));
-    private String password = "Qwerty" + (100000 + (int)(Math.random() *999999));;
+    private String password = "Qwerty" + (100000 + (int)(Math.random() *999999));
     private String firstName = "Test" + (100000 + (int)(Math.random() *999999));
 
     public String getLogin() {
